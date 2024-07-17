@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본 이미지 슬라이드</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-slider {
+            overflow: hidden;
+            white-space: nowrap; /* 이미지들을 가로로 나란히 배치하기 위해 필요 */
+            position: relative;
+        }
+        .slider-img {
+            width: 100%; /* 부모 요소에 맞춰 이미지 크기 조정 */
+            height: auto;
+            display: inline-block;
+            vertical-align: top; /* 이미지의 세로 정렬을 맞추기 위해 필요 */
+            transition: opacity 0.5s ease; /* 페이드 인/아웃 효과를 위한 transition 설정 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image-slider">
+        <img class="slider-img" src="1.avif" alt="일본 이미지 1">
+        <img class="slider-img" src="2.webp" alt="일본 이미지 2">
+        <img class="slider-img" src="https://www.japan.travel/ko/kr/wp-content/uploads/2022/05/2021_12_17_snow_fes_2022.jpg" alt="일본 이미지 3">
+        <img class="slider-img" src="https://www.japan.travel/ko/kr/wp-content/uploads/2022/05/hirosaki-fn.jpg" alt="일본 이미지 4">
+        <img class="slider-img" src="https://www.japan.travel/ko/kr/wp-content/uploads/2022/05/sagano-fn.jpg" alt="일본 이미지 5">
+        <img class="slider-img" src="https://www.japan.travel/ko/kr/wp-content/uploads/2022/05/aichi-fn.jpg" alt="일본 이미지 6">
+    </div>
+</div>
+
+<script>
+    const sliderImages = document.querySelectorAll('.slider-img');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        sliderImages.forEach(img => img.style.opacity = '0');
+        sliderImages[index].style.opacity = '1';
+    }
+
+    setInterval(function() {
+        currentIndex = (currentIndex + 1) % sliderImages.length;
+        showSlide(currentIndex);
+    }, 5000);
+</script>
+
+</body>
+</html>

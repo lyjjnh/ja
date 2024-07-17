@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본 여행 안내</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+        .main-content {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none; /* Initially hide all content */
+            min-height:1000px ;
+        }
+        .main-content.active {
+            display: block; /* Display active content */
+        }
+        .main-content img{
+            width: 100%;
+        }
+        .image-slider {
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            max-width: 100%;
+            height: 500px;
+            
+        }
+        .slider-img {
+            min-width: 100%; /* 최대 너비 100%로 설정하여 부모 요소에 맞게 조절 */
+            height: 500px; /* 고정된 높이 설정 */
+            object-fit: cover; /* 이미지 비율 유지하며 부모 요소에 맞추기 */
+            display: inline-block; /* 인라인 블록 요소로 설정하여 한 줄에 표시 */
+            position: absolute;
+            left: 100%;
+        }
+        .slider-img.active {
+            left: 0;
+            transition: left 1s ease; /* 페이드 인/아웃 효과를 위한 transition 설정 */
+        }
+        .slider-img.next{
+            left: -100%;
+            transition: left 1s ease;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" data-target="home">홈</a></li>
+                <li><a href="#" class="nav-link" data-target="tour">투어 및 액티비티</a></li>
+                <li><a href="#" class="nav-link" data-target="event">이벤트</a></li>
+                <li><a href="#" class="nav-link" data-target="places">여행지</a></li>
+                <li><a href="#" class="nav-link" data-target="tips">여행 팁</a></li>
+                <li><a href="#" class="nav-link" data-target="news">소식</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="image-slider">
+        <img class="slider-img active" src="1.avif" alt="일본 이미지 1">
+        <img class="slider-img" src="2.webp" alt="일본 이미지 2">
+        <img class="slider-img" src="3.jpeg" alt="일본 이미지 3">
+        <img class="slider-img" src="4.jpg" alt="일본 이미지 4">
+    </div>
+
+    <div id="home" class="main-content active">
+        <h2>Welcome to JAPAN</h2>
+        <p>다채로운 일본 여행을 경험해보세요. 역사적인 장소, 현대적인 도시, 전통적인 문화 등 여러 가지를 발견할 수 있습니다.</p>
+        <p>일본은 독특한 매력을 가진 다양한 지역들로 구성되어 있습니다. 여러분의 다음 일본 여행을 계획해 보세요!</p>
+        <img src="6.jpg" alt="">
+    </div>
+
+    <div id="tour" class="main-content">
+        <h2>투어 및 액티비티</h2>
+        <p>일본에서 제공하는 다양한 투어 및 액티비티를 즐겨보세요. 문화 체험, 자연 속의 모험, 특별한 체험을 경험할 수 있는 기회를 제공합니다.
+            <br>바로 예약하러가기 -> <a href="https://livejapan.com/ko/activity-guided_food_tours/">https://livejapan.com/ko/activity-guided_food_tours/</a>
+    </div>
+
+    <div id="event" class="main-content">
+        <h2>이벤트</h2>
+        <p>일본에서 진행되는 다양한 이벤트에 참여해보세요. 축제, 공연, 전시회 등 다채로운 문화적 경험을 할 수 있습니다.
+            <br> 일본에 모든 이벤트 한 번에 몰아보기 -> <a href="https://www.gotokyo.org/kr/event-calendar/index.html">https://www.gotokyo.org/kr/event-calendar/index.html</a>
+        </p>
+    </div>
+
+    <div id="places" class="main-content">
+        <h2>여행지</h2>
+        <p>일본의 주요 여행지를 소개합니다. 도시, 자연 경관, 역사적 장소 등 다양한 명소를 탐험해보세요.</p>
+        <br> 일본 여행지에 대해 궁금하다면? -> <a href="https://www.youtube.com/watch?v=5nMfF1EtslQ">https://www.youtube.com/watch?v=5nMfF1EtslQ</a>
+    </div>
+
+    <div id="tips" class="main-content">
+        <h2>여행 팁</h2>
+        <p>일본 여행을 더욱 즐겁고 편리하게 만들어줄 팁과 꿀팁을 제공합니다. 준비, 식사, 숙박 등 여행에 유용한 정보를 찾아보세요.<br>
+            <a href="https://brunch.co.kr/@guyskim/20">https://brunch.co.kr/@guyskim/20</a><br>
+                <a href="https://www.youtube.com/watch?v=WdPqJyEq9m8">https://www.youtube.com/watch?v=WdPqJyEq9m8</a>
+        </p>
+    </div>
+
+    <div id="news" class="main-content">
+        <h2>소식</h2>
+        <p>일본 관련 최신 
+            <a href="https://www3.nhk.or.jp/nhkworld/ko/news/">뉴스</a>
+            와 업데이트된 정보를 제공합니다. 여행을 준비하는 데 도움이 될 수 있는 다양한 소식을 확인하세요.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mainContents = document.querySelectorAll('.main-content');
+        const sliderImages = document.querySelectorAll('.slider-img');
+        let currentIndex = 0;
+
+        // Function to show slide by index
+        function showSlide(index) {
+            // Hide all images
+            sliderImages.forEach(img => {
+                if(img.classList.contains('next')) img.classList.remove('next')
+                if(img.classList.contains('active')) img.classList.add('next')
+                img.classList.remove('active')
+            });
+            // Show the image at the given index
+            sliderImages[index].classList.add('active');
+        }
+
+        // Automatic slide change
+        setInterval(function() {
+            currentIndex = (currentIndex + 1) % sliderImages.length;
+            showSlide(currentIndex);
+        }, 3000);
+
+        // Add click event listener to navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+
+                // Hide all main content sections
+                mainContents.forEach(content => content.classList.remove('active'));
+
+                // Show the clicked content section
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
